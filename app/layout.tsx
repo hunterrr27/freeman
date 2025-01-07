@@ -2,21 +2,24 @@ import "./globals.css";
 import {
   NavigationMenu,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import { ThemeProvider } from "@/components/theme-provider";
 import { DarkButton } from "@/components/DarkButton";
 import Link from "next/link";
 
+interface RootLayoutProps {
+  children: React.ReactNode;
+}
+
 export default function RootLayout({ children }: RootLayoutProps) {
-  // Example menu items
+  // Updated menu items with correct routes
   const menuItems = [
-    { label: "about", link: "Link 1" },
-    { label: "book", link: "Link 2" },
-    { label: "portfolio", link: "Link 3" },
-    { label: "blog", link: "Link 4" },
-    { label: "contact", link: "Link 5" },
+    { label: "about", link: "/about" },
+    { label: "book", link: "/book" },
+    { label: "portfolio", link: "/portfolio" },
+    { label: "blog", link: "/blog" },
+    { label: "contact", link: "/contact" },
   ];
 
   return (
@@ -37,7 +40,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
               <NavigationMenuList className="flex gap-4">
                 {menuItems.map((item, index) => (
                   <NavigationMenuItem key={index}>
-                    <NavigationMenuLink href="#">{item.label}</NavigationMenuLink>
+                    <Link href={item.link} className="text-sm font-medium">
+                      {item.label}
+                    </Link>
                   </NavigationMenuItem>
                 ))}
               </NavigationMenuList>

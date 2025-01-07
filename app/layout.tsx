@@ -7,7 +7,10 @@ import {
 import { ThemeProvider } from "@/components/theme-provider";
 import { DarkButton } from "@/components/DarkButton";
 import Link from "next/link";
-import { Metadata } from 'next'
+import { Metadata } from 'next';
+import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 
 export const metadata: Metadata = {
   title: {
@@ -23,7 +26,6 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
-  // Updated menu items with correct routes
   const menuItems = [
     { label: "about", link: "/about" },
     { label: "book", link: "/book" },
@@ -43,8 +45,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
           disableTransitionOnChange
         >
           <header className="flex justify-between items-center p-4">
-            <Link href="/" className="text-lg font-medium">freeman&apos;s</Link>
-            <NavigationMenu className="flex justify-center">
+            <Link href="/" className="text-lg font-medium">
+              freeman&apos;s
+            </Link>
+
+            {/* Desktop Navigation */}
+            <NavigationMenu className="hidden md:flex justify-center">
               <NavigationMenuList className="flex gap-4">
                 {menuItems.map((item, index) => (
                   <NavigationMenuItem key={index}>
@@ -56,10 +62,41 @@ export default function RootLayout({ children }: RootLayoutProps) {
               </NavigationMenuList>
             </NavigationMenu>
 
-            <DarkButton />
+            {/* Mobile Navigation */}
+            <div className="flex items-center gap-4 md:hidden">
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon" className="md:hidden">
+                    <Menu className="h-5 w-5" />
+                    <span className="sr-only">Toggle menu</span>
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right">
+                  <SheetHeader>
+                    <SheetTitle>Navigation</SheetTitle>
+                  </SheetHeader>
+                  <nav className="flex flex-col gap-4 mt-8">
+                    {menuItems.map((item, index) => (
+                      <Link
+                        key={index}
+                        href={item.link}
+                        className="text-sm font-medium py-2 hover:text-primary transition-colors"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </nav>
+                  </SheetContent>
+              </Sheet>
+              <DarkButton />
+            </div>
+
+            {/* Desktop Dark Mode Button */}
+            <div className="hidden md:block">
+              <DarkButton />
+            </div>
           </header>
 
-          {/* Main Content */}
           <main>{children}</main>
         </ThemeProvider>
       </body>

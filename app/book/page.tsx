@@ -2,6 +2,12 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar, Video, MessageSquare } from "lucide-react";
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Book a Consultation | Freeman Development',
+  description: 'Schedule a free consultation with Freeman Development to discuss your web development project needs and goals.',
+}
 
 export default function BookPage() {
   return (

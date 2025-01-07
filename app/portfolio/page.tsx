@@ -4,6 +4,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Github, Globe } from "lucide-react";
 import Link from 'next/link';
 import Image from 'next/image';
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Portfolio | Freeman Development',
+  description: 'Explore our web development projects showcasing modern, responsive websites and applications built with the latest technologies.',
+}
 
 export default function PortfolioPage() {
   const projects = [

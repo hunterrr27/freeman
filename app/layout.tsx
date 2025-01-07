@@ -7,6 +7,16 @@ import {
 import { ThemeProvider } from "@/components/theme-provider";
 import { DarkButton } from "@/components/DarkButton";
 import Link from "next/link";
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: {
+    template: '%s | Freeman Development',
+    default: 'Freeman Development - Modern Web Solutions'
+  },
+  description: 'Professional web development and design services specializing in modern, responsive websites and applications.',
+  keywords: ['web development', 'web design', 'React', 'Next.js', 'responsive design'],
+}
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -32,10 +42,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
           enableSystem
           disableTransitionOnChange
         >
-          <header className="flex justify-between p-4">
-            <Link href="/">
-              <h1>freeman&apos;s</h1>
-            </Link>
+          <header className="flex justify-between items-center p-4">
+            <Link href="/" className="text-lg font-medium">freeman&apos;s</Link>
             <NavigationMenu className="flex justify-center">
               <NavigationMenuList className="flex gap-4">
                 {menuItems.map((item, index) => (

@@ -2,6 +2,12 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, Code, Rocket, Zap } from "lucide-react";
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Freeman Development & Design',
+  description: 'Innovative web design and development services tailored to your brand\'s needs. Expert solutions in Next.js, React, and modern web technologies.',
+}
 
 export default function HomePage() {
   return (

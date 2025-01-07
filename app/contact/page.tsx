@@ -2,6 +2,12 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Contact Us | Freeman Development',
+  description: 'Get in touch with Freeman Development for your next web project. We\'re here to help bring your digital vision to life.',
+}
 
 export default function ContactPage() {
   return (

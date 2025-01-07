@@ -66,7 +66,7 @@ export default function AboutPage() {
         <div className="max-w-[800px] mx-auto space-y-6">
           <h2 className="text-3xl font-bold text-center">our story</h2>
           <p className="text-muted-foreground text-center">
-            founded in 2020, freeman development has grown from a solo operation to a full-service web development agency. we&apos;ve helped dozens of businesses establish their digital presence and achieve their online goals.
+            founded in 2025, freeman development has grown from a solo operation to a full-service web development agency. we&apos;ve helped dozens of businesses establish their digital presence and achieve their online goals.
           </p>
         </div>
       </section>

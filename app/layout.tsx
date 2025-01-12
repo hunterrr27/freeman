@@ -28,7 +28,6 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   const menuItems = [
     { label: "about", link: "/about" },
-    { label: "book", link: "/book" },
     { label: "portfolio", link: "/portfolio" },
     { label: "blog", link: "/blog" },
     { label: "contact", link: "/contact" },

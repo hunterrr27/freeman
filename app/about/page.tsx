@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, Heart, Coffee, ArrowRight } from "lucide-react";
 import { Metadata } from 'next'
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'About Us | Freeman Development',
@@ -77,9 +78,11 @@ export default function AboutPage() {
         <p className="text-muted-foreground max-w-[600px] mx-auto">
           reach out to learn more about how we can help your business grow
         </p>
-        <Button size="lg">
-          get in touch <ArrowRight className="ml-2 h-4 w-4" />
-        </Button>
+        <Link href="/contact">
+          <Button size="lg" >
+            get in touch <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
+        </Link>
       </section>
     </div>
   );

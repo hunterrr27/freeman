@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, Code, Rocket, Zap } from "lucide-react";
 import { Metadata } from 'next'
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Freeman Development & Design',
@@ -20,9 +21,11 @@ export default function HomePage() {
         <p className="text-xl text-muted-foreground max-w-[600px]">
           innovative web design, tailored to your brand&apos;s needs
         </p>
-        <Button size="lg" className="mt-6">
-          start your project <ArrowRight className="ml-2 h-4 w-4" />
-        </Button>
+        <Link href="/contact">
+          <Button size="lg" className="mt-6">
+            start your project <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
+        </Link>
       </section>
 
       {/* USP Section */}
@@ -68,11 +71,11 @@ export default function HomePage() {
       <section className="bg-muted py-12 -mx-4 px-4">
         <div className="grid md:grid-cols-3 gap-8 text-center">
           <div>
-            <h3 className="text-3xl font-bold">98%</h3>
+            <h3 className="text-3xl font-bold">100%</h3>
             <p className="text-muted-foreground">client satisfaction</p>
           </div>
           <div>
-            <h3 className="text-3xl font-bold">50+</h3>
+            <h3 className="text-3xl font-bold">10+</h3>
             <p className="text-muted-foreground">websites launched</p>
           </div>
           <div>
@@ -88,9 +91,11 @@ export default function HomePage() {
         <p className="text-muted-foreground max-w-[600px] mx-auto">
           let&apos;s create a website that drives results for your business
         </p>
-        <Button size="lg" variant="outline">
-          book a free consultation
-        </Button>
+        <Link href="/contact">
+          <Button size="lg" variant="outline">
+            book a free consultation
+          </Button>
+        </Link>
       </section>
     </div>
   );

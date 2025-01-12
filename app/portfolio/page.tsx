@@ -14,12 +14,12 @@ export const metadata: Metadata = {
 export default function PortfolioPage() {
   const projects = [
     {
-      title: "tech startup platform",
-      description: "modern saas platform with user authentication, dashboard analytics, and real-time data visualization",
-      tags: ["Next.js", "Tailwind", "PostgreSQL", "Prisma"],
-      image: "/api/placeholder/600/400",
-      liveUrl: "#",
-      githubUrl: "#"
+      title: "freeman's collision – auto body shop website",
+      description: "modern, responsive auto body shop website built with next.js, shadcn, and tailwind css, featuring smooth animations and a dark mode toggle",
+      tags: ["next.js", "tailwind", "framer motion"],
+      image: "/freeman-collision.jpg",
+      liveUrl: "https://freeman-collision.vercel.app/",
+      githubUrl: "https://github.com/hunterrr27/freeman-collision"
     },
     {
       title: "e-commerce website",

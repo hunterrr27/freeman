@@ -43,17 +43,20 @@ export default function RootLayout({ children }: RootLayoutProps) {
           enableSystem
           disableTransitionOnChange
         >
-          <header className="flex justify-between items-center p-4">
-            <Link href="/" className="text-lg font-medium">
-              freeman&apos;s
-            </Link>
+          <header className="relative flex items-center p-4">
+            {/* Left Logo */}
+            <div className=" flex-shrink-0">
+              <Link href="/" className="text-lg font-medium">
+                freeman&apos;s
+              </Link>
+            </div>
 
-            {/* Desktop Navigation */}
-            <NavigationMenu className="hidden md:flex justify-center">
+            {/* Centered Desktop Navigation */}
+            <NavigationMenu className="hidden md:flex absolute left-1/2 -translate-x-1/2">
               <NavigationMenuList className="flex gap-4">
                 {menuItems.map((item, index) => (
                   <NavigationMenuItem key={index}>
-                    <Link href={item.link} className="text-sm font-medium">
+                    <Link href={item.link} className="text-2xl font-medium">
                       {item.label}
                     </Link>
                   </NavigationMenuItem>
@@ -62,10 +65,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
             </NavigationMenu>
 
             {/* Mobile Navigation */}
-            <div className="flex items-center gap-4 md:hidden">
+            <div className="flex items-center gap-4 md:hidden ml-auto">
               <Sheet>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="md:hidden">
+                  <Button variant="ghost" size="icon">
                     <Menu className="h-5 w-5" />
                     <span className="sr-only">Toggle menu</span>
                   </Button>
@@ -85,13 +88,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
                       </Link>
                     ))}
                   </nav>
-                  </SheetContent>
+                </SheetContent>
               </Sheet>
               <DarkButton />
             </div>
 
             {/* Desktop Dark Mode Button */}
-            <div className="hidden md:block">
+            <div className="hidden md:block flex-shrink-0 ml-auto">
               <DarkButton />
             </div>
           </header>
